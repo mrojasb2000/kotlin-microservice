@@ -5,9 +5,12 @@ jobs:
       - image: circleci/openjdk:8-jdk
     steps:
       - checkout
-    run: gradle clean
-    run: gradle build  
-
+      - run:
+        name: Gradle Clean
+        command: gradle clean
+      - run:
+        name: Gradle build
+        command: gradle build  
 workflows:
   version: 2
   build-and-deploy:
